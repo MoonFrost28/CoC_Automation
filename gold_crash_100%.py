@@ -19,8 +19,8 @@ elixir_cart = keys_config.elixir_cart
 
 # Durées de temporisation spécifiques pour chaque touche
 temporisation_touche = {
-    'find_attack': 3.5, # Temporisation de 3.5 secondes pour la touche "num2"
-    'dezoom' : 0.4 # Temporisation de 0.4 seconde pour la touche "subtract"
+    'num2': 3.5, # Temporisation de 3.5 secondes pour la touche "num2"
+    'subtract' : 0.4 # Temporisation de 0.4 seconde pour la touche "subtract"
 }
 
 # Temporisation par défaut pour les touches non spécifiées dans le dictionnaire
