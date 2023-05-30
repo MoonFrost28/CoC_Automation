@@ -3,13 +3,6 @@ import time
 import keyboard
 import pyautogui
 
-# Combinaison de touches pour interrompre le code
-combinaison_interruption = ['q']
-
-# Fonction pour vérifier si la combinaison de touches est enfoncée
-def check_combinaison_touche():
-    return keyboard.is_pressed(combinaison_interruption[0])
-
 # Temporisation de 3 seconsdes
 time.sleep(3)
 
@@ -38,18 +31,12 @@ temporisation_touche = {
 # Temporisation par défaut pour les touches non spécifiées dans le dictionnaire
 temporisation_par_defaut = 0.04 # Temporisation de 40 millisecondes par défaut
 
-# Variable pour vérifier si le script a été interrompu
-interrompu = False
-
 # Fonction principale
 def executer_script(nb_boucles):
     global interrompu  # Déclarer la variable interrompu comme variable globale
     
     # Répétition de la série de touches
     for touche in touche_init:
-        if check_combinaison_touche():  # Vérifier si la combinaison de touches est enfoncée
-            interrompu = True
-            break  # Sortir de la boucle interne si la combinaison de touches est détectée
         pyautogui.press(touche)
         if touche in temporisation_touche:
             temporisation = temporisation_touche[touche]
@@ -59,9 +46,6 @@ def executer_script(nb_boucles):
 
     for _ in range(nb_boucles):
         for touche in serie_touche:
-            if check_combinaison_touche():  # Vérifier si la combinaison de touches est enfoncée
-                interrompu = True
-                break  # Sortir de la boucle interne si la combinaison de touches est détectée
             pyautogui.press(touche)
             if touche in temporisation_touche:
                 temporisation = temporisation_touche[touche]
@@ -70,9 +54,6 @@ def executer_script(nb_boucles):
             time.sleep(temporisation)
         if _ % 10 == 0:
             for touche in touches_supplementaires:
-                if check_combinaison_touche():  # Vérifier si la combinaison de touches est enfoncée
-                    interrompu = True
-                    break  # Sortir de la boucle si la combinaison de touches est détectée
                 if touche == 'subtract':
                     pyautogui.keyDown(touche)
                     time.sleep(0.5)
@@ -92,9 +73,6 @@ def executer_script(nb_boucles):
     if not interrompu:
         # Exécution des touches supplémentaires
         for touche in touches_reset:
-            if check_combinaison_touche():  # Vérifier si la combinaison de touches est enfoncée
-                interrompu = True
-                break  # Sortir de la boucle si la combinaison de touches est détectée
             pyautogui.press(touche)
             if touche in temporisation_touche:
                 temporisation = temporisation_touche[touche]
@@ -107,10 +85,7 @@ if len(sys.argv) > 1:
     try:
         nb_boucles = int(sys.argv[1])
         executer_script(nb_boucles)
-        if interrompu:
-            print("Le script trophy_drop a été interrompu par l'utilisateur.")
-        else:
-            print("Le script trophy_drop s'est exécuté avec succès.")
+        print("Le script trophy_drop s'est exécuté avec succès.")
     except ValueError:
         print("Veuillez spécifier un nombre entier de boucles.")
 else:
