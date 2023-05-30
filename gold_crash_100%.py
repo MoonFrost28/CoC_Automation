@@ -56,7 +56,7 @@ def executer_script(nb_boucles):
             time.sleep(temporisation)
         time.sleep(1)
         #quit_game()
-        print(_ + 1)
+        current_loop = _ + 1 
 
         # Exécution des touches supplémentaires
         for key in elixir_cart.values():
@@ -71,6 +71,7 @@ def executer_script(nb_boucles):
             else:
                 temporisation = temporisation_par_defaut
             time.sleep(temporisation)
+        print(str(current_loop) + '/' + str(nb_boucles))
 
 # Vérifier si le nombre de boucles et l'instruction de réexécution sont spécifiés en argument de ligne de commande
 if len(sys.argv) > 1:
