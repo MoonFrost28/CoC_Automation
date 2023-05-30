@@ -2,6 +2,7 @@ import sys
 import time
 import keyboard
 import pyautogui
+import json
 
 # Combinaison de touches pour interrompre le code
 combinaison_interruption = ['q']
