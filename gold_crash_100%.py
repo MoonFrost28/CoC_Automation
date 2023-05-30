@@ -1,11 +1,15 @@
 import sys
 import time
 import pyautogui
+import importlib
 
 import keys_config
 
-# Temporisation de 3 secondes
+# Temporisation de 3 secondes avant de lancer le script
 time.sleep(3)
+
+# Charger le fichier keys_config.py
+keys_config = importlib.import_module('keys_config')
 
 # Liste des touches à répéter
 gold = keys_config.gold
@@ -22,11 +26,23 @@ temporisation_touche = {
 # Temporisation par défaut pour les touches non spécifiées dans le dictionnaire
 temporisation_par_defaut = 0.04 # Temporisation de 40 millisecondes par défaut
 
+def quit_game():
+    pyautogui.keyDown('ctrl') 
+    pyautogui.keyDown('shift')
+    pyautogui.press('5')
+    pyautogui.keyUp('shift')
+    pyautogui.keyUp('ctrl')
+    time.sleep(0.5)
+    pyautogui.click(1300, 130) # Coordonnées pour la touche "TOUT EFFACER"
+    time.sleep(1)
+    pyautogui.click(1080, 350) # Coordonnées pour l'application Clash of Clans
+    time.sleep(16)
+
 # Fonction principale
 def executer_script(nb_boucles):
     # Répétition de la série de touches
     for _ in range(nb_boucles):
-        for key in gold:
+        for key in gold.values():
             if key == 'troops_drop':
                 pyautogui.keyDown(key)
                 time.sleep(1)
@@ -39,20 +55,11 @@ def executer_script(nb_boucles):
                 temporisation = temporisation_par_defaut
             time.sleep(temporisation)
         time.sleep(1)
-        pyautogui.keyDown('ctrl') 
-        pyautogui.keyDown('shift')
-        pyautogui.press('5')
-        pyautogui.keyUp('shift')
-        pyautogui.keyUp('ctrl')
-        time.sleep(0.5)
-        pyautogui.click(1300, 130) # Coordonnées pour la touche "TOUT EFFACER"
-        time.sleep(1)
-        pyautogui.click(1080, 350) # Coordonnées pour l'application Clash of Clans
-        time.sleep(16)
+        #quit_game()
         print(_ + 1)
 
         # Exécution des touches supplémentaires
-        for key in elixir_cart:
+        for key in elixir_cart.values():
             if key == 'dezoom':
                 pyautogui.keyDown(key)
                 time.sleep(0.5)
