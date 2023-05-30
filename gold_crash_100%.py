@@ -1,21 +1,22 @@
 import sys
 import time
-import keyboard
 import pyautogui
+
+import keys_config
 
 # Temporisation de 3 secondes
 time.sleep(3)
 
 # Liste des touches à répéter
-serie_touche = ['num1', 'num2', 'num3', 'num4', 'num3', 'a', 'num4', 'a', 'z', 'e', 'r', 't', 'y']
+gold = keys_config.gold
 
 # Liste des touches supplémentaires
-touches_supplementaires = ['subtract', 'num8', 'num9', 'num0', 'num5']
+elixir_cart = keys_config.elixir_cart
 
 # Durées de temporisation spécifiques pour chaque touche
 temporisation_touche = {
-    'num2': 3.5, # Temporisation de 3.5 secondes pour la touche "num2"
-    'subtract' : 0.4 # Temporisation de 0.4 seconde pour la touche "subtract"
+    'find_attack': 3.5, # Temporisation de 3.5 secondes pour la touche "num2"
+    'dezoom' : 0.4 # Temporisation de 0.4 seconde pour la touche "subtract"
 }
 
 # Temporisation par défaut pour les touches non spécifiées dans le dictionnaire
@@ -25,15 +26,15 @@ temporisation_par_defaut = 0.04 # Temporisation de 40 millisecondes par défaut
 def executer_script(nb_boucles):
     # Répétition de la série de touches
     for _ in range(nb_boucles):
-        for touche in serie_touche:
-            if touche == 'num4':
-                pyautogui.keyDown(touche)
+        for key in gold:
+            if key == 'troops_drop':
+                pyautogui.keyDown(key)
                 time.sleep(1)
-                pyautogui.keyUp(touche)
+                pyautogui.keyUp(key)
             else:
-                pyautogui.press(touche)
-            if touche in temporisation_touche:
-                temporisation = temporisation_touche[touche]
+                pyautogui.press(key)
+            if key in temporisation_touche:
+                temporisation = temporisation_touche[key]
             else:
                 temporisation = temporisation_par_defaut
             time.sleep(temporisation)
@@ -51,15 +52,15 @@ def executer_script(nb_boucles):
         print(_ + 1)
 
         # Exécution des touches supplémentaires
-        for touche in touches_supplementaires:
-            if touche == 'subtract':
-                pyautogui.keyDown(touche)
+        for key in elixir_cart:
+            if key == 'dezoom':
+                pyautogui.keyDown(key)
                 time.sleep(0.5)
-                pyautogui.keyUp(touche)
+                pyautogui.keyUp(key)
             else:
-                pyautogui.press(touche)
-            if touche in temporisation_touche:
-                temporisation = temporisation_touche[touche]
+                pyautogui.press(key)
+            if key in temporisation_touche:
+                temporisation = temporisation_touche[key]
             else:
                 temporisation = temporisation_par_defaut
             time.sleep(temporisation)
@@ -69,7 +70,6 @@ if len(sys.argv) > 1:
     try:
         nb_boucles = int(sys.argv[1])
         executer_script(nb_boucles)
-        print("Le script gold s'est exécuté avec succès.")
     except ValueError:
         print("Veuillez spécifier un nombre entier de boucles.")
 else:
