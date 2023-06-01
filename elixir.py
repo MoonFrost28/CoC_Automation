@@ -40,4 +40,4 @@ try:
         executer_script(nb_boucles, nb_iterations, current_iteration)
         print("Le script elixir s'est exécuté avec succès.")
 except KeyboardInterrupt:
-    print("Le script a été interrompu par l'utilisateur")
+    print("Le script a été interrompu par l'utilisateur.")

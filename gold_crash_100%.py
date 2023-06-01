@@ -32,4 +32,4 @@ try:
         executer_script(nb_boucles)
         print("Le script gold s'est exécuté avec succès.")
 except KeyboardInterrupt:
-    print("Le script a été interrompu par l'utilisateur")
+    print("Le script a été interrompu par l'utilisateur.")
