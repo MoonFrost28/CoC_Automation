@@ -35,5 +35,6 @@ if len(sys.argv) > 2:
 else:
     nb_boucles = 1
     nb_iterations = 1
-    executer_script(nb_boucles, nb_iterations)
+    current_iteration = 1
+    executer_script(nb_boucles, nb_iterations, current_iteration)
     print("Le script elixir s'est exécuté avec succès.")
