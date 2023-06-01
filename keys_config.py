@@ -37,3 +37,21 @@ elixir = {
     'confirm' : 'num6',
     'return_home' : 'num7'
 }
+
+# Swap_village
+
+village_swap = {
+    'layout_editor ' : 'p',
+    'village_selection' : 'd', # 'q' pour le village de gauche, 's' pour le village central, 'd' pour le village de droite
+    'set_active_village' : 'u',
+    'close_window' : 'x'
+}
+
+# Reset_village
+
+village_reset = {
+    'layout_editor ' : 'p',
+    'village_selection' : 's', # 'q' pour le village de gauche, 's' pour le village central, 'd' pour le village de droite
+    'set_active_village' : 'u',
+    'close_window' : 'x'
+}
