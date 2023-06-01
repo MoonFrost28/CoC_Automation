@@ -1,4 +1,4 @@
-# Elixir_loop
+# Gold_loop
 
 gold = {
     'attack_button' : 'num1',
@@ -16,6 +16,8 @@ gold = {
     'troop_6_power' : 'y',
 }
 
+# Recolt_loop
+
 elixir_cart = {
     'dezoom' : 'subtract',
     'cart_click_1' : 'num8',
@@ -23,6 +25,8 @@ elixir_cart = {
     'collect_elixir' : 'num0',
     'exit_window' : 'num5'
 }
+
+# Elixir_loop
 
 elixir = {
     'attack_button' : 'num1',
