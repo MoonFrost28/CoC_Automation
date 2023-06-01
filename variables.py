@@ -42,6 +42,7 @@ def collect_elixir_cart(nb_boucles, activate_temporisation = False):
         if key == "collect_elixir":
             tempo_sleep = 5 * nb_boucles
             time.sleep(tempo_sleep) # Temporisation de 5 * nb_boucles secondes pour la touche "collect_elixir"
+    time.sleep(0.05)
 
 def farm_elixir():
     for key in elixir:
@@ -51,6 +52,7 @@ def farm_elixir():
         else:
             temporisation = def_temporisation
         time.sleep(temporisation)
+    time.sleep(0.05)
 
 def farm_gold():
     for key in gold:
@@ -65,6 +67,8 @@ def farm_gold():
         else:
             temporisation = def_temporisation
         time.sleep(temporisation)
+    time.sleep(0.05)
+
 
 def change_village():
     for key in village_swap:
@@ -73,7 +77,9 @@ def change_village():
             temporisation = key_temporisation[key]
         else:
             temporisation = def_temporisation
-        time.sleep(temporisation) 
+        time.sleep(temporisation)
+    time.sleep(0.05)
+
 
 def reset_village():
     for key in village_reset:
@@ -83,6 +89,7 @@ def reset_village():
         else:
             temporisation = def_temporisation
         time.sleep(temporisation)
+    time.sleep(0.05)
 
 def quit_game():
     pyautogui.keyDown('ctrl') 
