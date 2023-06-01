@@ -1,84 +1,26 @@
 import sys
 import time
-import keyboard
-import pyautogui
 
-# Temporisation de 3 seconsdes
+from variables import farm_elixir, collect_elixir_cart, change_village, reset_village, display_loops
+
+# Temporisation de 3 secondes avant de lancer le script
 time.sleep(3)
-
-#List des touches init
-touche_init = ['p', 'd', 'u', 'x']
-
-# Liste des touches à répéter
-serie_touche = ['num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7']
-
-# Liste des touches supplémentaires
-touches_supplementaires = ['subtract', 'num9', 'num0', 'num5']
-
-# Liste des touches reset
-touches_reset = ['p', 's', 'u', 'x']
-
-# Durées de temporisation spécifiques pour chaque touche
-temporisation_touche = {
-    'd' : 0.4, # Temporisation de 0.5 seconde pour la touche "d"
-    'num2': 3.5, # Temporisation de 3.5 secondes pour la touche "num2"
-    'num6': 0.25, # Temporisation de 0.25 seconde pour la touche "num6"
-    'num7' : 1, # Temporisation de 1 seconde pour la touche "num7"
-    'subtract' : 0.4, # Temporisation de 0.4 seconde pour la touche "subtract"
-    's' : 0.4 # Temporisation de 0.5 seconde pour la touche "s"
-}
-
-# Temporisation par défaut pour les touches non spécifiées dans le dictionnaire
-temporisation_par_defaut = 0.04 # Temporisation de 40 millisecondes par défaut
 
 # Fonction principale
 def executer_script(nb_boucles):
-    global interrompu  # Déclarer la variable interrompu comme variable globale
-    
-    # Répétition de la série de touches
-    for touche in touche_init:
-        pyautogui.press(touche)
-        if touche in temporisation_touche:
-            temporisation = temporisation_touche[touche]
-        else:
-            temporisation = temporisation_par_defaut
-        time.sleep(temporisation) 
+    # Passe au village "open"
+    change_village()
 
+    # Exécute la fonction de farm d'elixir nb_boucles fois - utilisé seulement pour perdre des trophées
     for _ in range(nb_boucles):
-        for touche in serie_touche:
-            pyautogui.press(touche)
-            if touche in temporisation_touche:
-                temporisation = temporisation_touche[touche]
-            else:
-                temporisation = temporisation_par_defaut
-            time.sleep(temporisation)
-        if _ % 10 == 0:
-            for touche in touches_supplementaires:
-                if touche == 'subtract':
-                    pyautogui.keyDown(touche)
-                    time.sleep(0.5)
-                    pyautogui.keyUp(touche)
-                else:
-                    pyautogui.press(touche)
-                if touche in temporisation_touche:
-                    temporisation = temporisation_touche[touche]
-                else:
-                    temporisation = temporisation_par_defaut
-                time.sleep(temporisation)
-        print(_ + 1)
-        if interrompu:
-            break  # Sortir de la boucle externe si la combinaison de touches est détectée
-        time.sleep(1.1)  # Temporisation de 1,1 secondes entre chaque série de touches
+        farm_elixir()
+        time.sleep(1.1)  # Temporisation de 1.1 secondes entre chaque série de touches
+        if _ % 10 == 0: # Récupère la charrette toutes les 10 boucles
+            collect_elixir_cart(nb_boucles)
+        display_loops(_, nb_boucles)
 
-    if not interrompu:
-        # Exécution des touches supplémentaires
-        for touche in touches_reset:
-            pyautogui.press(touche)
-            if touche in temporisation_touche:
-                temporisation = temporisation_touche[touche]
-            else:
-                temporisation = temporisation_par_defaut
-            time.sleep(temporisation)
+    # Réinitialise le village initial
+    reset_village()
 
 # Vérifier si le nombre de boucles et l'instruction de réexécution sont spécifiés en argument de ligne de commande
 if len(sys.argv) > 1:
