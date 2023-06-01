@@ -13,7 +13,7 @@ def executer_script(nb_boucles):
         farm_gold()
         time.sleep(1)
         quit_game()
-
+        time.sleep(1)
         # Récupération de la charrette d'élixir
         collect_elixir_cart(nb_boucles)
         display_loops(_, nb_boucles)
@@ -23,6 +23,7 @@ if len(sys.argv) > 1:
     try:
         nb_boucles = int(sys.argv[1])
         executer_script(nb_boucles)
+        print("Le script gold s'est exécuté avec succès.")
     except ValueError:
         print("Veuillez spécifier un nombre entier de boucles.")
 else:
