@@ -23,7 +23,7 @@ key_temporisation = {
 }
 
 # Temporisation par défaut pour les touches non spécifiées dans le dictionnaire
-def_temporisation = 0.04 # Temporisation de 40 millisecondes par défaut
+def_temporisation = 0.05 # Temporisation par défaut
 
 def collect_elixir_cart(nb_boucles, activate_temporisation = False):
     for key in elixir_cart:
@@ -38,10 +38,10 @@ def collect_elixir_cart(nb_boucles, activate_temporisation = False):
         else:
             temporisation = def_temporisation
         time.sleep(temporisation)
-    if activate_temporisation:
-        if key == "collect_elixir":
-            tempo_sleep = 5 * nb_boucles
-            time.sleep(tempo_sleep) # Temporisation de 5 * nb_boucles secondes pour la touche "collect_elixir"
+        if activate_temporisation:
+            if key == "cart_click_2":
+                tempo_sleep = 5 * nb_boucles
+                time.sleep(tempo_sleep) # Temporisation de 5 * nb_boucles secondes pour la touche "collect_elixir"
     time.sleep(0.05)
 
 def farm_elixir():
