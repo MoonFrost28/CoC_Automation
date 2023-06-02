@@ -2,6 +2,6 @@
 Python scripts for automating resources gathering
 
 # Roadmap
-[x] Factorize codes to be more modular
-[] Add interface and .exe file for easier use
-
+- [x] Factorize codes to be more modular
+- [ ] Add interface and .exe file for easier use
+- [ ] Add trophy calculation for optimized farming
