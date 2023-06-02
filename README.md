@@ -13,8 +13,31 @@ Python scripts for automating resources gathering in builder base.
     - `elixir.py`
     - `gold_crash_100%.py`
     - `trophy_drop.py`
+6. For each file, a default of 1 loop is coded, however if more loops are needed, simply add the number of loops at the end of the line :
+    - e.g. : `python gold_crash_100%.py 10`
+    - Special conditions for `elixir.py` as it requires two arguments
 
 # Roadmap
 - [x] Factorize codes to be more modular
 - [ ] Add interface and .exe file for easier use
 - [ ] Add trophy calculation for optimized farming
+
+# Strategy
+
+The goal is to drop around ~2000 trophies to be strong enough and ensure strong wins against opponents as well as strong defenses. Opponents will not be strong enough to destroy your village
+
+# File description
+
+## elixir.py
+
+Farm builer elixir by dropping hero and instantly surrendering. 
+
+## get_mouse_pos.py
+
+## gold_crash_100%.py
+
+## keys_config.py
+
+## trophy_drop.py
+
+## variables.py
