@@ -86,16 +86,23 @@ button_layout.addWidget(elixir_button)
 button_layout.addWidget(trophy_drop_button)
 
 # Ajout des labels au layout des labels
-gold_nb_boucles_label = QLabel("Nb boucles Gold :")
-elixir_nb_boucles_label = QLabel("Nb boucles Elixir :")
-elixir_nb_iterations_label = QLabel("Nb itérations Elixir :")
-trophy_drop_nb_boucles_label = QLabel("Nb boucles Trophy Drop :")
+gold_nb_boucles_label = QLabel("Gold loops number :")
+elixir_nb_boucles_label = QLabel("Elixir loops number :")
+elixir_nb_iterations_label = QLabel("Elixir iterations number :")
+trophy_drop_nb_boucles_label = QLabel("Trophy Drop loops number:")
 
 # Création des zones d'entrée
 gold_nb_boucles_entry = QLineEdit()
+gold_nb_boucles_entry.setPlaceholderText("Enter a number...")
+
 elixir_nb_boucles_entry = QLineEdit()
+elixir_nb_boucles_entry.setPlaceholderText("Enter a number...")
+
 elixir_nb_iterations_entry = QLineEdit()
+elixir_nb_iterations_entry.setPlaceholderText("Enter a number...")
+
 trophy_drop_nb_boucles_entry = QLineEdit()
+trophy_drop_nb_boucles_entry.setPlaceholderText("Enter a number...")
 
 gold_layout.addWidget(gold_nb_boucles_label)
 gold_layout.addWidget(gold_nb_boucles_entry)
