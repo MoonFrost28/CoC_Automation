@@ -69,7 +69,6 @@ def farm_gold():
         time.sleep(temporisation)
     time.sleep(0.05)
 
-
 def change_village():
     for key in village_swap:
         pyautogui.press(village_swap[key])
@@ -79,7 +78,6 @@ def change_village():
             temporisation = def_temporisation
         time.sleep(temporisation)
     time.sleep(0.05)
-
 
 def reset_village():
     for key in village_reset:

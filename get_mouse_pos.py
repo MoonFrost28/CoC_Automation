@@ -1,5 +1,4 @@
 from pynput.mouse import Listener
-from pynput import keyboard
 
 print('Cliquez sur l\'écran pour afficher les coordonnées.')
 
