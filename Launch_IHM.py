@@ -1,4 +1,5 @@
 import sys
+import subprocess
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QSpacerItem, QSizePolicy
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import QSize
@@ -6,15 +7,23 @@ from PyQt5.QtCore import QSize
 def execute_gold():
     nb_boucles = gold_nb_boucles_entry.text()
     print("Executing gold script with", nb_boucles, "loops")
+    script_path = "../../gold_crash_100%.py"
+    subprocess.run(["python", script_path, nb_boucles])
 
 def execute_elixir():
     nb_boucles = elixir_nb_boucles_entry.text()
     nb_iterations = elixir_nb_iterations_entry.text()
     print("Executing elixir script with", nb_boucles, "loops and", nb_iterations, "iterations")
+    script_path = "../../elixir.py"
+    subprocess.run(["python", script_path, nb_boucles, nb_iterations])
+
 
 def execute_trophy_drop():
     nb_boucles = trophy_drop_nb_boucles_entry.text()
     print("Executing trophy_drop script with", nb_boucles, "loops")
+    script_path = "../../trophy_drop.py"
+    subprocess.run(["python", script_path, nb_boucles])
+
 
 def exit_application():
     app.quit()
