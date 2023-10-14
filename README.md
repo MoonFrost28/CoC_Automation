@@ -60,3 +60,21 @@ Similar to elixir script but your builder village is set to lose defenses to dro
 File with the definition and the algorithm behind the scripts.
 
 # Function description and how to use them
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
