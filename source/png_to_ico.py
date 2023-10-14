@@ -16,13 +16,13 @@ def convert_image_to_ico(image_path, output_path):
 
 # Chemin vers l'image source
 
-image_path = "Images/CoC_icon.jpg"  # Remplacez par le chemin réel vers votre image
+image_path = "Images/Diamond_LeagueB.png"  # Remplacez par le chemin réel vers votre image
 
  
 
 # Chemin de sortie pour l'icône ICO
 
-output_path = "Images/CoC_icon.ico"  # Spécifiez le chemin et le nom de fichier souhaités pour l'icône ICO
+output_path = "Images/Diamond_LeagueB.ico"  # Spécifiez le chemin et le nom de fichier souhaités pour l'icône ICO
 
 
 # Conversion de l'image en icône ICO
