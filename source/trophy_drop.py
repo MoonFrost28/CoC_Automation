@@ -1,7 +1,7 @@
 import sys
 import time
 
-from variables import farm_elixir, collect_elixir_cart, change_village, reset_village
+from Functions import farm_elixir, collect_elixir_cart, change_village, reset_village
 
 # Temporisation de 3 secondes avant de lancer le script
 time.sleep(3)
