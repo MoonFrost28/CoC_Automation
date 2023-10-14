@@ -43,7 +43,7 @@ This file uses the *farm_elixir()* and the *collect_elixir_cart* functions
 
 
 
-## gold_crash_100%.
+## gold_crash_100%
 
 Drop all troups, close the game and restart it.
 
@@ -61,20 +61,14 @@ File with the definition and the algorithm behind the scripts.
 
 # Function description and how to use them
 
-##
+## collect_elixir_cart()
 
-##
+## farm_elixir()
 
-##
+## farm_gold()
 
-##
+## change_village()
 
-##
+## reset_village()
 
-##
-
-##
-
-##
-
-##
+## quit_game()
