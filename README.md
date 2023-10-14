@@ -52,7 +52,7 @@ Coordinates don't need to be exact but make sur they are in the zone of the butt
 Farm builer gold by dropping hero and troups, activating their power, then quitting the game and restarting it.
 There's a mechanic in the game that allows you to close the game and finish the ongoing attack instantly, without waiting for the troops to destroy the village.
 Timings to get 200% is quite hard, therefore the script focuses on running attacks on the first village only. [^1]  
-This file uses the [*farm_gold()*](README.md#farm_gold), [*quit_game()*](README.md#quit_game) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions.
+This file uses the [*farm_gold()*](README.md#farm_gold), the [*quit_game()*](README.md#quit_game) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions.
 
 [^1]: In case you are low enough, there is only one village available in the builder base.
 
@@ -62,11 +62,12 @@ Keys sequence for various scripts.
 
 ## trophy_drop.py
 
-Farm builer elixir by dropping hero and instantly surrendering.
-Being low enough in trophies allow you to have great defenses against opponent and thus, winning elixir.  
-This file uses the [*farm_elixir()*](README.md#farm_elixir) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions.
+This script allows you to drop in trophies in case you feel you are too high to make the other scripts work. It functions in the same way the elixir script works beside that it uses an "open" village in order for you to lose defenses. 
+Before running the script, it changes village to put an other village that you will have dedicated to lose trophies. [^2]
 
-Similar to elixir script but your builder village is set to lose defenses to drop trophies
+This file uses the [*change_village()*](README.md#change_village), the [*reset_village(README.md#reset_village)*], the [*farm_elixir()*](README.md#farm_elixir) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions.
+
+[^2]: It can be your village where you display your remaining upgrades with all defenses on one side for example.
 
 ## functions.py
 
