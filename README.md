@@ -3,13 +3,16 @@ Python scripts for automating resources gathering in builder base.
 
 # Usage
 1. Install [Python](https://www.python.org/downloads/) and install the following modules using [**pip install**](https://pypi.org/project/pip/) :
+    - **pyinstaller**
     - **pyautogui**
+    - **pynput**
+    - **PyQt5**
     - **importlib**
 
 2. Download project
 3. Import keyconfig file (*com.supercell.clashofclans.cfg*) to your Bluestacks profile, if needed, please check link [Import control scheme](https://support.bluestacks.com/hc/en-us/articles/360056129291-How-to-import-your-game-controls-from-BlueStacks-4-and-use-them-in-BlueStacks-5#:~:text=After%20the%20game%20launches%2C%20open,on%20the%20%22Import%22%20icon.). 
 4. Personnalize profile as you wish and adapt profile in `keys_config.py` file
-5. Launch IHM, enter a number and run selected script by pressing the button
+5. Launch IHM, enter a number and run selected script by pressing the correct button according to the script you want to run.
 
 # Roadmap
 - [x] Factorize codes to be more modular
@@ -46,4 +49,4 @@ Similar to elixir script but your builder village is set to lose defenses to dro
 
 ## variables.py
 
-File with the definition and the algorithm behind the scripts
+File with the definition and the algorithm behind the scripts.
