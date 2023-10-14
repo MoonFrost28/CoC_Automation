@@ -1,9 +1,12 @@
 import PyInstaller.__main__
 
 PyInstaller.__main__.run([
-    'Launch_IHM.py',
+    'source/Launch_IHM.py',
+    '--onefile',
     '--noconsole',
-    '--add-data=Images;images',
+    '--noconfirm',
+    '--add-data=Images;Images',
     '--icon=Images/CoC_icon.ico',
-    '--clean'
+    '--clean',
+    '--distpath=.'
 ])

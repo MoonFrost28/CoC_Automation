@@ -6,22 +6,42 @@ from PyQt5.QtCore import QSize, QThread, pyqtSignal
 
 def execute_gold():
     nb_boucles = gold_nb_boucles_entry.text()
-    print("Executing gold script with", nb_boucles, "loops")
-    script_path = "../../gold_crash_100%.py"
+    if nb_boucles=="":
+        nb_boucles = str(1)
+        loop_text = "loop"
+    else:
+        loop_text = "loops"
+    print("Executing gold script with", nb_boucles, loop_text)
+    script_path = "source/gold_crash_100%.py"
     subprocess.run(["python", script_path, nb_boucles])
 
 def execute_elixir():
     nb_boucles = elixir_nb_boucles_entry.text()
     nb_iterations = elixir_nb_iterations_entry.text()
-    print("Executing elixir script with", nb_boucles, "loops and", nb_iterations, "iterations")
-    script_path = "../../elixir.py"
+    if nb_boucles=="":
+        nb_boucles = str(1)
+        loop_text = "loop"
+    else:
+        loop_text = "loops"
+    if nb_iterations=="":
+        nb_iterations = str(1)
+        iteration_text = "iteration"
+    else:
+        iteration_text = "iterations"        
+    print("Executing elixir script with", nb_boucles, loop_text, "and", nb_iterations, iteration_text)
+    script_path = "source/elixir.py"
     subprocess.run(["python", script_path, nb_boucles, nb_iterations])
 
 
 def execute_trophy_drop():
     nb_boucles = trophy_drop_nb_boucles_entry.text()
-    print("Executing trophy_drop script with", nb_boucles, "loops")
-    script_path = "../../trophy_drop.py"
+    if nb_boucles=="":
+        nb_boucles = str(1)
+        loop_text = "loop"
+    else:
+        loop_text = "loops"
+    print("Executing trophy_drop script with", nb_boucles, loop_text)
+    script_path = "source/trophy_drop.py"
     subprocess.run(["python", script_path, nb_boucles])
 
 

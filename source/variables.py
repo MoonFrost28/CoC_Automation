@@ -101,7 +101,3 @@ def quit_game():
     pyautogui.click(1080, 350) # Coordonnées pour l'application Clash of Clans
     time.sleep(18)
     pyautogui.press('space')
-
-def display_loops(_, nb_boucles):
-    current_loop = _ + 1 
-    print(str(current_loop) + '/' + str(nb_boucles))
