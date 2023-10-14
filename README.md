@@ -8,6 +8,7 @@ Python scripts for automating resources gathering in builder base.
     - **pynput**
     - **PyQt5**
     - **importlib**
+    - **Pillow**
 
 2. Download project
 3. Import keyconfig file (*com.supercell.clashofclans.cfg*) to your Bluestacks profile, if needed, please check link [Import control scheme](https://support.bluestacks.com/hc/en-us/articles/360056129291-How-to-import-your-game-controls-from-BlueStacks-4-and-use-them-in-BlueStacks-5#:~:text=After%20the%20game%20launches%2C%20open,on%20the%20%22Import%22%20icon.). 
