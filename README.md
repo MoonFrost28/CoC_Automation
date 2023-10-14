@@ -114,3 +114,6 @@ Please make sure to update [*keys_config.py*](README.md#keys_configpy) with the 
 - d: for right village
 
 ## quit_game()
+
+This function performs a sequence of keys to close the game and restart it.
+***PLEASE*** make sure the coordinates used in this function match with the coordinates of your interface.
