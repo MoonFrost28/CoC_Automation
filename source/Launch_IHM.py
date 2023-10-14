@@ -5,21 +5,21 @@ from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import QSize, QThread, pyqtSignal
 
 def execute_gold():
-    nb_boucles = gold_nb_boucles_entry.text()
-    if nb_boucles=="":
-        nb_boucles = str(1)
+    nb_loops = gold_nb_loops_entry.text()
+    if nb_loops=="":
+        nb_loops = str(1)
         loop_text = "loop"
     else:
         loop_text = "loops"
-    print("Executing gold script with", nb_boucles, loop_text)
+    # print("Executing gold script with", nb_boucles, loop_text)
     script_path = "source/gold_crash_100%.py"
-    subprocess.run(["python", script_path, nb_boucles])
+    subprocess.run(["python", script_path, nb_loops])
 
 def execute_elixir():
-    nb_boucles = elixir_nb_boucles_entry.text()
+    nb_loops = elixir_nb_loops_entry.text()
     nb_iterations = elixir_nb_iterations_entry.text()
-    if nb_boucles=="":
-        nb_boucles = str(1)
+    if nb_loops=="":
+        nb_loops = str(1)
         loop_text = "loop"
     else:
         loop_text = "loops"
@@ -28,21 +28,21 @@ def execute_elixir():
         iteration_text = "iteration"
     else:
         iteration_text = "iterations"        
-    print("Executing elixir script with", nb_boucles, loop_text, "and", nb_iterations, iteration_text)
+    # print("Executing elixir script with", nb_boucles, loop_text, "and", nb_iterations, iteration_text)
     script_path = "source/elixir.py"
-    subprocess.run(["python", script_path, nb_boucles, nb_iterations])
+    subprocess.run(["python", script_path, nb_loops, nb_iterations])
 
 
 def execute_trophy_drop():
-    nb_boucles = trophy_drop_nb_boucles_entry.text()
-    if nb_boucles=="":
-        nb_boucles = str(1)
+    nb_loops = trophy_drop_nb_loops_entry.text()
+    if nb_loops=="":
+        nb_loops = str(1)
         loop_text = "loop"
     else:
         loop_text = "loops"
-    print("Executing trophy_drop script with", nb_boucles, loop_text)
+    # print("Executing trophy_drop script with", nb_boucles, loop_text)
     script_path = "source/trophy_drop.py"
-    subprocess.run(["python", script_path, nb_boucles])
+    subprocess.run(["python", script_path, nb_loops])
 
 
 def exit_application():
@@ -115,37 +115,37 @@ button_layout.addWidget(elixir_button)
 button_layout.addWidget(trophy_drop_button)
 
 # Ajout des labels au layout des labels
-gold_nb_boucles_label = QLabel("Gold loops number :")
-elixir_nb_boucles_label = QLabel("Elixir loops number :")
+gold_nb_loops_label = QLabel("Gold loops number :")
+elixir_nb_loops_label = QLabel("Elixir loops number :")
 elixir_nb_iterations_label = QLabel("Elixir iterations number :")
-trophy_drop_nb_boucles_label = QLabel("Trophy Drop loops number:")
+trophy_drop_nb_loops_label = QLabel("Trophy Drop loops number:")
 
 # Création des zones d'entrée
-gold_nb_boucles_entry = QLineEdit()
-gold_nb_boucles_entry.setPlaceholderText("Enter a number...")
+gold_nb_loops_entry = QLineEdit()
+gold_nb_loops_entry.setPlaceholderText("Enter a number...")
 
-elixir_nb_boucles_entry = QLineEdit()
-elixir_nb_boucles_entry.setPlaceholderText("Enter a number...")
+elixir_nb_loops_entry = QLineEdit()
+elixir_nb_loops_entry.setPlaceholderText("Enter a number...")
 
 elixir_nb_iterations_entry = QLineEdit()
 elixir_nb_iterations_entry.setPlaceholderText("Enter a number...")
 
-trophy_drop_nb_boucles_entry = QLineEdit()
-trophy_drop_nb_boucles_entry.setPlaceholderText("Enter a number...")
+trophy_drop_nb_loops_entry = QLineEdit()
+trophy_drop_nb_loops_entry.setPlaceholderText("Enter a number...")
 
-gold_layout.addWidget(gold_nb_boucles_label)
-gold_layout.addWidget(gold_nb_boucles_entry)
+gold_layout.addWidget(gold_nb_loops_label)
+gold_layout.addWidget(gold_nb_loops_entry)
 gold_layout.addStretch()
 
-elixir_layout.addWidget(elixir_nb_boucles_label)
-elixir_layout.addWidget(elixir_nb_boucles_entry)
+elixir_layout.addWidget(elixir_nb_loops_label)
+elixir_layout.addWidget(elixir_nb_loops_entry)
 elixir_layout.addStretch()
-elixir_layout.addWidget(elixir_nb_iterations_label)
-elixir_layout.addWidget(elixir_nb_iterations_entry)
+elixir_layout.addWidget(elixir_nb_loops_label)
+elixir_layout.addWidget(elixir_nb_loops_entry)
 elixir_layout.addStretch()
 
-trophy_drop_layout.addWidget(trophy_drop_nb_boucles_label)
-trophy_drop_layout.addWidget(trophy_drop_nb_boucles_entry)
+trophy_drop_layout.addWidget(trophy_drop_nb_loops_label)
+trophy_drop_layout.addWidget(trophy_drop_nb_loops_entry)
 trophy_drop_layout.addStretch()
 
 # Ajout des zones d'entrée au layout des zones d'entrée

@@ -25,7 +25,7 @@ key_temporisation = {
 # Temporisation par défaut pour les touches non spécifiées dans le dictionnaire
 def_temporisation = 0.05 # Temporisation par défaut
 
-def collect_elixir_cart(nb_boucles, activate_temporisation = False):
+def collect_elixir_cart(nb_loops, activate_temporisation = False):
     for key in elixir_cart:
         if key == 'dezoom':
             pyautogui.keyDown(elixir_cart[key])
@@ -40,7 +40,7 @@ def collect_elixir_cart(nb_boucles, activate_temporisation = False):
         time.sleep(temporisation)
         if activate_temporisation:
             if key == "cart_click_2":
-                tempo_sleep = 0.5 * nb_boucles
+                tempo_sleep = 0.5 * nb_loops
                 time.sleep(tempo_sleep)
     time.sleep(0.05)
 
@@ -96,8 +96,8 @@ def quit_game():
     pyautogui.keyUp('shift')
     pyautogui.keyUp('ctrl')
     time.sleep(0.5)
-    pyautogui.click(1300, 130) # Coordonnées pour la touche "TOUT EFFACER"
+    pyautogui.click(1300, 100) # Coordonnées pour la touche "TOUT EFFACER"
     time.sleep(1)
-    pyautogui.click(1080, 350) # Coordonnées pour l'application Clash of Clans
+    pyautogui.click(800, 350) # Coordonnées pour l'application Clash of Clans
     time.sleep(18)
     pyautogui.press('space')

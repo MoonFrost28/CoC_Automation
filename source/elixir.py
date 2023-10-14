@@ -8,19 +8,19 @@ time.sleep(3)
 
 try:
     # Fonction principale
-    def executer_script(nb_boucles):
+    def executer_script(nb_loops):
         # Exécute la fonction de farm d'elixir nb_boucles fois
-        for _ in range(nb_boucles):
+        for _ in range(nb_loops):
             farm_elixir()
             time.sleep(1.1)  # Temporisation de 1.1 secondes entre chaque série de touches
         
         # Récupération de la charrette d'élixir
-        collect_elixir_cart(nb_boucles, False)
+        collect_elixir_cart(nb_loops, False)
 
-    nb_boucles = int(sys.argv[1])
+    nb_loops = int(sys.argv[1])
     nb_iterations = int(sys.argv[2])
     for _ in range(nb_iterations):
-        executer_script(nb_boucles)
+        executer_script(nb_loops)
         time.sleep(2)  # Temporisation de 2 secondes entre chaque itération
 
 except KeyboardInterrupt:
