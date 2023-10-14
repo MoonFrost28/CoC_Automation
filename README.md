@@ -11,9 +11,9 @@ Python scripts for automating resources gathering in builder base.
     - **Pillow**
 
 2. Download project
-3. Import keyconfig file (*com.supercell.clashofclans.cfg*) to your Bluestacks profile, if needed, please check link [Import control scheme](https://support.bluestacks.com/hc/en-us/articles/360056129291-How-to-import-your-game-controls-from-BlueStacks-4-and-use-them-in-BlueStacks-5#:~:text=After%20the%20game%20launches%2C%20open,on%20the%20%22Import%22%20icon.). 
-4. Personnalize profile as you wish and adapt profile in `keys_config.py` file
-5. Launch IHM, enter a number and run selected script by pressing the correct button according to the script you want to run.
+4. Import keyconfig file (*com.supercell.clashofclans.cfg*) to your Bluestacks profile, if needed, please check link [Import control scheme](https://support.bluestacks.com/hc/en-us/articles/360056129291-How-to-import-your-game-controls-from-BlueStacks-4-and-use-them-in-BlueStacks-5#:~:text=After%20the%20game%20launches%2C%20open,on%20the%20%22Import%22%20icon.). 
+5. Run IHM, by launching the .exe file.
+6. Enter a number and run selected script by pressing the correct button according to the script you want to run. More detail below.
 
 # Roadmap
 - [x] Factorize codes to be more modular
@@ -30,11 +30,18 @@ The goal is to drop around ~2000 trophies to be strong enough and ensure strong 
 
 # File description
 
+All source files are in the source folder.
+The only files you will potentially use are the one described below.
+
 ## elixir.py
 
-Farm builer elixir by dropping hero and instantly surrendering. 
+Farm builer elixir by dropping hero and instantly surrendering.
+Being low enough in trophies allow you to have great defenses against opponent and thus, winning elixir.
+This file uses the *farm_elixir()* and the *collect_elixir_cart* functions
 
 ## get_mouse_pos.py
+
+
 
 ## gold_crash_100%.
 
@@ -51,3 +58,23 @@ Similar to elixir script but your builder village is set to lose defenses to dro
 ## variables.py
 
 File with the definition and the algorithm behind the scripts.
+
+# Function description and how to use them
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
