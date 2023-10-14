@@ -26,7 +26,7 @@ Python scripts for automating resources gathering in builder base.
 
 # Strategy
 
-The goal is to drop around ~2000 trophies to be strong enough and ensure strong wins against opponents as well as strong defenses. Opponents will not be strong enough to destroy your village
+The goal is to drop around ~2000 trophies to be strong enough and ensure strong wins against opponents as well as strong defenses. Opponents will not be strong enough to destroy your village.
 
 # File description
 
@@ -36,7 +36,7 @@ The only files you will potentially use are the one described below.
 ## elixir.py
 
 Farm builer elixir by dropping hero and instantly surrendering.
-Being low enough in trophies allow you to have great defenses against opponent and thus, winning elixir.\
+Being low enough in trophies allow you to have great defenses against opponent and thus, winning elixir.
 This file uses the [*farm_elixir()*](README.md#farm_elixir) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions
 
 ## get_mouse_pos.py
