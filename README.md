@@ -36,8 +36,8 @@ The only files you will potentially use are the one described below.
 ## elixir.py
 
 Farm builer elixir by dropping hero and instantly surrendering.
-Being low enough in trophies allow you to have great defenses against opponent and thus, winning elixir.
-This file uses the [*farm_elixir()*](README.md#farm_elixir) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions
+Being low enough in trophies allow you to have great defenses against opponent and thus, winning elixir.  
+This file uses the [*farm_elixir()*](README.md#farm_elixir) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions.
 
 ## get_mouse_pos.py
 
