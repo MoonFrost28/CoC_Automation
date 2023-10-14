@@ -76,7 +76,11 @@ This file uses the [*change_village()*](README.md#change_village), the [*reset_v
 
 ## functions.py
 
-File with the definition and the algorithm behind the scripts.
+File with the definition and the algorithm behind the various scripts. See below for more details about each function.
+
+## Launch_IHM.py
+
+File to describe the user interface, generally not to be used.
 
 # Function description and how to use them
 
