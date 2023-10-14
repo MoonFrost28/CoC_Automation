@@ -1,7 +1,7 @@
 import sys
 import time
 
-from Functions import farm_elixir, collect_elixir_cart
+from functions import farm_elixir, collect_elixir_cart
 
 # Temporisation de 3 secondes avant de lancer le script
 time.sleep(3)

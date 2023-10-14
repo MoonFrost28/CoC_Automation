@@ -1,7 +1,7 @@
 import sys
 import time
 
-from Functions import farm_gold, collect_elixir_cart, quit_game
+from functions import farm_gold, collect_elixir_cart, quit_game
 
 # Temporisation de 3 secondes avant de lancer le script
 time.sleep(3)
