@@ -41,11 +41,20 @@ This file uses the [*farm_elixir()*](README.md#farm_elixir) and the [*collect_el
 
 ## get_mouse_pos.py
 
-
+Get mouse coordinates when clicking on the mouse. Needed for the [*quit_game()*](README.md#quit_game) function.
+Use it once to get coordinates for the two clicks the script needs to perform.
+1. On the homescreen of Bluestacks, click on the Clash of Clans icon to get the coordinates of the icon, note them. (TIP: press Windows key to get the coordinates in your terminal, otherwise it will just launch the game)
+2. Same process with the "CLOSE ALL" button on the Recent Apps menu.
+Coordinates don't need to be exact but make sur they are in the zone of the button. 
 
 ## gold_crash_100%
 
-Drop all troups, close the game and restart it.
+Farm builer gold by dropping hero and troups, activating their power, then quitting the game and restarting it.
+There's a mechanic in the game that allows you to close the game and finish the ongoing attack instantly, without waiting for the troops to destroy the village.
+Timings to get 200% is quite hard, therefore the script focuses on running attacks on the first village only. [^1]  
+This file uses the [*farm_gold()*](README.md#farm_gold), [*quit_game()*](README.md#quit_game) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions.
+
+[^1]: In case you are low enough, there is only one village available in the builder base.
 
 ## keys_config.py
 
@@ -53,9 +62,13 @@ Keys sequence for various scripts.
 
 ## trophy_drop.py
 
+Farm builer elixir by dropping hero and instantly surrendering.
+Being low enough in trophies allow you to have great defenses against opponent and thus, winning elixir.  
+This file uses the [*farm_elixir()*](README.md#farm_elixir) and the [*collect_elixir_cart*](README.md#collect_elixir_cart) functions.
+
 Similar to elixir script but your builder village is set to lose defenses to drop trophies
 
-## variables.py
+## functions.py
 
 File with the definition and the algorithm behind the scripts.
 
