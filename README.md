@@ -66,7 +66,7 @@ If you are using your own config file, please make sure this *keys_config.py* fi
 ## trophy_drop.py
 
 This script allows you to drop in trophies in case you feel you are too high to make the other scripts work. It functions in the same way the elixir script works beside that it uses an "open" village in order for you to lose defenses. 
-Before running the script, it changes village to put an other village that you will have dedicated to lose trophies. [^2]  
+Before running the script, it changes village to put an other village that you will have dedicated to lose trophies.  [^2]
 ***PLEASE***, before running the script, make sure no trees or oher elements of decoration are in the way of the new village, otherwise it will not work. This script is to be used preferentially after cleaning your village.  
 
 This file uses the [*change_village()*](README.md#change_village), the [*reset_village()*](README.md#reset_village), the [*farm_elixir()*](README.md#farm_elixir) and the [*collect_elixir_cart()*](README.md#collect_elixir_cart) functions.
