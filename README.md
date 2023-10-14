@@ -2,7 +2,7 @@
 Python scripts for automating resources gathering in builder base.
 
 # Usage
-1. Install [Python](https://www.python.org/downloads/) and install the following modules using **pip install** :
+1. Install [Python](https://www.python.org/downloads/) and install the following modules using [**pip install**](https://pypi.org/project/pip/) :
     - **pyautogui**
     - **importlib**
 
