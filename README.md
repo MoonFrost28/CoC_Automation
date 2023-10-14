@@ -80,18 +80,37 @@ File with the definition and the algorithm behind the various scripts. See below
 
 ## Launch_IHM.py
 
-File to describe the user interface, generally not to be used.
+File to describe the user interface, no need to be modified.
 
 # Function description and how to use them
 
 ## collect_elixir_cart()
 
+This function performs a sequence of keys to collect elixir from elixir cart.
+It uses 2 parameters with one being set as a default value. The first parameter is only used if the temporisation is activated *activate_temporisation = True*.
+
 ## farm_elixir()
+
+This function performs a sequence of keys to drop the hero then surrendering immediately after.
 
 ## farm_gold()
 
+This function performs a sequence of keys to drop the hero and all the troops, it uses their capacity as well.
+
 ## change_village()
 
+This function performs a sequence of keys to change from your default village to an "open" village before the script [*trophy_drop.py*](README.md#trophy_droppy) is started.  
+Please make sure to update [*keys_config.py*](README.md#keys_configpy) with the position of your villages. Using the Bluestacks config file provided, here are the default keys:
+- q: for left village
+- s: for center village
+- d: for right village
+
 ## reset_village()
+
+This function performs a sequence of keys to change from your "open" village to your default village after the script [*trophy_drop.py*](README.md#trophy_droppy) is terminated.  
+Please make sure to update [*keys_config.py*](README.md#keys_configpy) with the position of your villages. Using the Bluestacks config file provided, here are the default keys:
+- q: for left village
+- s: for center village
+- d: for right village
 
 ## quit_game()
