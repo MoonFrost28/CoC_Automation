@@ -1,8 +1,18 @@
 import sys
 import subprocess
+import Interface_variables
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel, QLineEdit, QPushButton, QCheckBox, QSpacerItem 
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import Qt
+
+# Initialisation of interface variables
+text_width = Interface_variables.text_width
+text_height = Interface_variables.text_height 
+image_width = Interface_variables.image_width
+image_height = Interface_variables.image_height
+entry_width = Interface_variables.entry_width
+button_height = Interface_variables.button_height
+button_width = Interface_variables.button_width
 
 # Définition des fonctions
 def execute_gold():
@@ -32,7 +42,13 @@ def execute_trophy_drop():
 def exit_application():
     app.quit()
 
-def pause_application():
+def pause_gold():
+    print ("TO DO")
+
+def pause_elixir():
+    print ("TO DO")
+
+def pause_trophy_drop():
     print ("TO DO")
 
 # Création de l'application PyQt
@@ -41,7 +57,6 @@ app = QApplication(sys.argv)
 # Création de la fenêtre principale
 window = QWidget()
 window.setWindowTitle("Clash of Clans script")
-#window.setGeometry(100, 100, 400, 100)
 app.setWindowIcon(QIcon("Images/CoC_icon.ico"))
 
 # Création des layouts pour organiser les éléments
@@ -56,9 +71,16 @@ gold_text_layout = QHBoxLayout()
 elixir_text_layout = QHBoxLayout()
 trophy_drop_text_layout = QHBoxLayout()
 
-gold_buttons_layout = QHBoxLayout()
-elixir_buttons_layout = QHBoxLayout()
-trophy_drop_buttons_layout = QHBoxLayout()
+gold_entry_layout = QHBoxLayout()
+elixir_entry_layout = QGridLayout()
+trophy_drop_entry_layout = QHBoxLayout()
+
+gold_checkbox_layout = QHBoxLayout()
+trophy_drop_checkbox_layout = QHBoxLayout()
+
+gold_button_layout = QHBoxLayout()
+elixir_button_layout = QHBoxLayout()
+trophy_drop_button_layout = QHBoxLayout()
 
 # Création des icônes à partir des fichiers d'images
 gold_pixmap = QPixmap("Images/GoldB.png")
@@ -83,6 +105,7 @@ gold_image.setStyleSheet("""
     border-bottom: 2px solid brown;
     padding: 10px 0px 10px 10px;
     """)
+gold_image.setFixedSize(image_width, image_height)
 
 gold_label = QLabel("Gold farming")
 gold_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -95,6 +118,7 @@ gold_label.setStyleSheet("""
     font-weight: bold;
     padding: 10px 10px 10px 10px;
     """)
+gold_label.setFixedSize(text_width, text_height)
 
 gold_text_layout.addWidget(gold_image)
 gold_text_layout.addWidget(gold_label)
@@ -110,6 +134,7 @@ elixir_image.setStyleSheet("""
     border-bottom: 2px solid brown;
     padding: 10px 0px 10px 10px;
     """)
+elixir_image.setFixedSize(image_width, image_height)
 
 elixir_label = QLabel("Elixir farming")
 elixir_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -122,6 +147,7 @@ elixir_label.setStyleSheet("""
     font-weight: bold;
     padding: 10px 10px 10px 10px;
     """)
+elixir_label.setFixedSize(text_width, text_height)
 
 elixir_text_layout.addWidget(elixir_image)
 elixir_text_layout.addWidget(elixir_label)
@@ -137,8 +163,9 @@ trophy_drop_image.setStyleSheet("""
     border-bottom: 2px solid brown;
     padding: 10px 0px 10px 10px;
     """)
+trophy_drop_image.setFixedSize(image_width, image_height)
 
-trophy_drop_label = QLabel("Trophy dropping")
+trophy_drop_label = QLabel("Trophy drop")
 trophy_drop_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 trophy_drop_label.setStyleSheet("""
     background-color: antiquewhite;
@@ -149,23 +176,41 @@ trophy_drop_label.setStyleSheet("""
     font-weight: bold;
     padding: 10px 10px 10px 10px;
     """)
+trophy_drop_label.setFixedSize(text_width, text_height)
 
 trophy_drop_text_layout.addWidget(trophy_drop_image)
 trophy_drop_text_layout.addWidget(trophy_drop_label)
 trophy_drop_text_layout.setSpacing(0)
 
 # Création des boutons
-gold_button = QPushButton("Play")
-gold_button.clicked.connect(execute_gold)
+gold_play_button = QPushButton("Play")
+gold_play_button.clicked.connect(execute_gold)
+gold_play_button.setFixedSize(button_width, button_height)
+gold_pause_button =QPushButton("Pause")
+gold_pause_button.clicked.connect(pause_gold)
+gold_pause_button.setFixedSize(button_width, button_height)
 
-elixir_button = QPushButton("Play")
-elixir_button.clicked.connect(execute_elixir)
+gold_button_layout.addWidget(gold_play_button)
+gold_button_layout.addWidget(gold_pause_button)
+gold_button_layout.setSpacing(0)
 
-trophy_drop_button = QPushButton("Play")
-trophy_drop_button.clicked.connect(execute_trophy_drop)
+elixir_play_button = QPushButton("Play")
+elixir_play_button.clicked.connect(execute_elixir)
+elixir_pause_button = QPushButton("Pause")
+elixir_pause_button.clicked.connect(pause_elixir)
 
-pause_button = QPushButton("Pause")
-pause_button.clicked.connect(pause_application)
+elixir_button_layout.addWidget(elixir_play_button)
+elixir_button_layout.addWidget(elixir_pause_button)
+elixir_button_layout.setSpacing(0)
+
+trophy_drop_play_button = QPushButton("Play")
+trophy_drop_play_button.clicked.connect(execute_trophy_drop)
+trophy_drop_pause_button = QPushButton("Pause")
+trophy_drop_pause_button.clicked.connect(pause_trophy_drop)
+
+trophy_drop_button_layout.addWidget(trophy_drop_play_button)
+trophy_drop_button_layout.addWidget(trophy_drop_pause_button)
+trophy_drop_button_layout.setSpacing(0)
 
 exit_button = QPushButton("Exit")
 exit_button.clicked.connect(exit_application)
@@ -173,64 +218,77 @@ exit_button.clicked.connect(exit_application)
 gold_checkbox = QCheckBox("Collect elixir")
 gold_checkbox.setChecked(True)
 
+gold_checkbox_layout.addStretch()
+gold_checkbox_layout.addWidget(gold_checkbox)
+gold_checkbox_layout.addStretch()
+
 trophy_drop_checkbox = QCheckBox("Collect elixir")
 trophy_drop_checkbox.setChecked(True)
 
+trophy_drop_checkbox_layout.addStretch()
+trophy_drop_checkbox_layout.addWidget(trophy_drop_checkbox)
+trophy_drop_checkbox_layout.addStretch()
+
 # Création des zones d'entrée
-gold_nb_loops_label = QLabel("Gold loops number")
+gold_nb_loops_label = QLabel("Loops number:")
 gold_nb_loops_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 gold_nb_loops_entry = QLineEdit()
-gold_nb_loops_entry.setPlaceholderText("Enter a number...")
+gold_nb_loops_entry.setAlignment(Qt.AlignmentFlag.AlignCenter)
+gold_nb_loops_entry.setFixedWidth(entry_width)
 
-elixir_nb_loops_label = QLabel("Elixir loops number")
+gold_entry_layout.addWidget(gold_nb_loops_label)
+gold_entry_layout.addWidget(gold_nb_loops_entry)
+
+elixir_nb_loops_label = QLabel("Loops number:")
 elixir_nb_loops_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 elixir_nb_loops_entry = QLineEdit()
-elixir_nb_loops_entry.setPlaceholderText("Enter a number...")
-elixir_nb_iterations_label = QLabel("Elixir iterations number")
+elixir_nb_loops_entry.setAlignment(Qt.AlignmentFlag.AlignCenter)
+elixir_nb_loops_entry.setFixedWidth(entry_width)
+
+elixir_nb_iterations_label = QLabel("Iterations number:")
 elixir_nb_iterations_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 elixir_nb_iterations_entry = QLineEdit()
-elixir_nb_iterations_entry.setPlaceholderText("Enter a number...")
+elixir_nb_iterations_entry.setAlignment(Qt.AlignmentFlag.AlignCenter)
+elixir_nb_iterations_entry.setFixedWidth(entry_width)
 
-trophy_drop_nb_loops_label = QLabel("Trophy Drop loops number")
+elixir_entry_layout.addWidget(elixir_nb_loops_label, 0, 0)
+elixir_entry_layout.addWidget(elixir_nb_loops_entry, 0, 1)
+elixir_entry_layout.addWidget(elixir_nb_iterations_label, 1, 0)
+elixir_entry_layout.addWidget(elixir_nb_iterations_entry, 1, 1)
+
+trophy_drop_nb_loops_label = QLabel("Loops number:")
 trophy_drop_nb_loops_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 trophy_drop_nb_loops_entry = QLineEdit()
-trophy_drop_nb_loops_entry.setPlaceholderText("Enter a number...")
+trophy_drop_nb_loops_entry.setAlignment(Qt.AlignmentFlag.AlignCenter)
+trophy_drop_nb_loops_entry.setFixedWidth(entry_width)
 
-# spacer = QSpacerItem
+trophy_drop_entry_layout.addWidget(trophy_drop_nb_loops_label)
+trophy_drop_entry_layout.addWidget(trophy_drop_nb_loops_entry)
 
 # Ajout des boutons au layout
 # Gold layout
 gold_layout.addLayout(gold_text_layout)
-gold_layout.addWidget(gold_nb_loops_label)
-gold_layout.addWidget(gold_nb_loops_entry)
-gold_layout.addWidget(gold_checkbox)
+gold_layout.addLayout(gold_entry_layout)
 gold_layout.addStretch()
-gold_layout.addWidget(gold_button)
+gold_layout.addLayout(gold_checkbox_layout)
+gold_layout.addLayout(gold_button_layout)
 
 # Elixir layout
 elixir_layout.addLayout(elixir_text_layout)
-elixir_layout.addWidget(elixir_nb_loops_label)
-elixir_layout.addWidget(elixir_nb_loops_entry)
-elixir_layout.addWidget(elixir_nb_iterations_label)
-elixir_layout.addWidget(elixir_nb_iterations_entry)
-elixir_layout.addWidget(elixir_button)
+elixir_layout.addLayout(elixir_entry_layout)
+elixir_layout.addLayout(elixir_button_layout)
 
 # Trophy drop layout
 trophy_drop_layout.addLayout(trophy_drop_text_layout)
-trophy_drop_layout.addWidget(trophy_drop_nb_loops_label)
-trophy_drop_layout.addWidget(trophy_drop_nb_loops_entry)
-trophy_drop_layout.addWidget(trophy_drop_checkbox)
+trophy_drop_layout.addLayout(trophy_drop_entry_layout)
 trophy_drop_layout.addStretch()
-trophy_drop_layout.addWidget(trophy_drop_button)
-
-# Bottom layout
-bottom_layout.addWidget(pause_button)
-bottom_layout.addWidget(exit_button)
+trophy_drop_layout.addLayout(trophy_drop_checkbox_layout)
+trophy_drop_layout.addLayout(trophy_drop_button_layout)
 
 main_layout.addLayout(gold_layout, 0, 0)
 main_layout.addLayout(elixir_layout, 0, 1)
 main_layout.addLayout(trophy_drop_layout, 0, 2)
-main_layout.addLayout(bottom_layout, 1, 3)
+main_layout.addWidget(exit_button, 1, 2)
 
 # Définition du layout principal pour la fenêtre
 window.setLayout(main_layout)
